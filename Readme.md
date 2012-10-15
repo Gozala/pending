@@ -9,10 +9,10 @@ likely to be used in conjunction with [watchable][watchable].
 
 ### isPending
 
-[pending/is](./is.js) module provides method that must return `true` for all
-pending values and return `false` for all others. Method has default
-implementation that returns `false`. Types that wish to implement this
-abstraction should return `true` while value is considered pending.
+[pending/is](./pending/blob/master/is.js) module provides method that must
+return `true` for all pending values and return `false` for all others. Method
+has default implementation that returns `false`. Types that wish to implement
+this abstraction should return `true` while value is considered pending.
 
 ```js
 var isPending = require("pending/is")
@@ -33,13 +33,13 @@ isPending(new Pending)    // => true
 
 ### await
 
-[pending/await](./await.js) module provides method that can be used to register
-listener that must be called once value is no longer pending. Method has
-default implementation that calls listener immediately with a value since non
-of the built-in types considered to be pending. Custom types wishing to
-implement this abstraction should define this method such that all registered
-listeners will be invoked with a delivery value once they it transitions to
-non-pending state.
+[pending/await](./pending/blob/master/await.js) module provides method that
+can be used to register listener that must be called once value is no longer
+pending. Method has default implementation that calls listener immediately
+with a value since non of the built-in types considered to be pending. Custom
+types wishing to implement this abstraction should define this method such
+that all registered listeners will be invoked with a delivery value once
+they it transitions to non-pending state.
 
 ```js
 var await = require("pending/await")
@@ -54,14 +54,14 @@ await.define(Pending, function(value, handler) {
 
 ### deliver
 
-[pending/deliver](./deliver.js) module provides method that can is supposed
-to doliver pending values and transition them form pending to non-pending
-state, such transition supposed to happen only once. Method does not comes
-with default implementation as non of the built-ins are considered pending,
-there for attempt to call it on values that don't implement it will throw.
-Custom types wishing to implement pending abstraction may choose to implement
-it, although it's optional since some pending values may be observable but not
-deliverable.
+[pending/deliver](./pending/blob/master/deliver.js) module provides method
+that can is supposed to doliver pending values and transition them form
+pending to non-pending state, such transition supposed to happen only once.
+Method does not comes with default implementation as non of the built-ins are
+considered pending, there for attempt to call it on values that don't
+implement it will throw. Custom types wishing to implement pending
+abstraction may choose to implement it, although it's optional since some
+pending values may be observable but not deliverable.
 
 
 ```js
