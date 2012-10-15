@@ -1,7 +1,7 @@
 {
   "name": "pending",
   "id": "pending",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Abstraction for pending values",
   "keywords": [ "pending", "abstraction", "polymorphic" ],
   "author": "Irakli Gozalishvili <rfobic@gmail.com> (http://jeditoolkit.com)",
