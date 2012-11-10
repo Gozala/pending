@@ -1,9 +1,13 @@
 {
   "name": "pending",
   "id": "pending",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Abstraction for pending values",
-  "keywords": [ "pending", "abstraction", "polymorphic" ],
+  "keywords": [
+    "pending",
+    "abstraction",
+    "polymorphic"
+  ],
   "author": "Irakli Gozalishvili <rfobic@gmail.com> (http://jeditoolkit.com)",
   "homepage": "https://github.com/Gozala/pending",
   "repository": {
@@ -30,8 +34,10 @@
     "test-node": "node ./test/index.js",
     "repl": "node node_modules/repl-utils"
   },
-  "licenses": [{
-    "type" : "MIT",
-    "url" : "https://github.com/Gozala/pending/License.md"
-  }]
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/Gozala/pending/License.md"
+    }
+  ]
 }
